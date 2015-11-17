@@ -8,7 +8,7 @@ class CommentManagerComponent extends React.Component {
         super(props);
 
         this.state = {
-            events: []
+            comments: []
         };
     }
 
@@ -17,11 +17,11 @@ class CommentManagerComponent extends React.Component {
     }
 
     render() {
-        var events = this.state.events.map((event, i) => {
+        var comments = this.state.comments.map((comment, i) => {
             var props = {
-                title: event.title,
-                date: event.date,
-                description: event.description
+                name: comment.name,
+                date: comment.date,
+                comment: comment.comment
             };
 
             return <CommentComponent key={i} {...props} />
@@ -29,14 +29,14 @@ class CommentManagerComponent extends React.Component {
 
         return (
             <div className='comment-manager-component'>
-                {events}
+                {comments}
             </div>
         );
     }
 
     handleNewCommentData(data) {
         this.setState({
-            events: data.events
+            comments: data.comments
         });
     }
 }
