@@ -1,8 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
-import EventComponent from './event-component';
+import CommentComponent from './comment-component';
 
-class EventManagerComponent extends React.Component {
+class CommentManagerComponent extends React.Component {
 
     constructor(props) {
         super(props);
@@ -13,7 +13,7 @@ class EventManagerComponent extends React.Component {
     }
 
     componentDidMount() {
-        $.getJSON(this.props.source, this.handleNewEventData.bind(this));
+        $.getJSON(this.props.source, this.handleNewCommentData.bind(this));
     }
 
     render() {
@@ -24,25 +24,25 @@ class EventManagerComponent extends React.Component {
                 description: event.description
             };
 
-            return <EventComponent key={i} {...props} />
+            return <CommentComponent key={i} {...props} />
         });
 
         return (
-            <div className='event-manager-component'>
+            <div className='comment-manager-component'>
                 {events}
             </div>
         );
     }
 
-    handleNewEventData(data) {
+    handleNewCommentData(data) {
         this.setState({
             events: data.events
         });
     }
 }
 
-EventManagerComponent.propTypes = {
+CommentManagerComponent.propTypes = {
     source: React.PropTypes.string.isRequired
 }
 
-export default EventManagerComponent;
+export default CommentManagerComponent;

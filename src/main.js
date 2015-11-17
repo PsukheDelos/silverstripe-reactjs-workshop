@@ -1,11 +1,11 @@
 import React from 'react';
-import EventManagerComponent from './event-manager-component';
+import CommentManagerComponent from './comment-manager-component';
 
 var props = {
     source: 'data/events.json'
 };
 
 React.render(
-    <EventManagerComponent {...props} />,
-    document.getElementById('event-manager-component-wrapper')
+    <CommentManagerComponent {...props} />,
+    document.getElementById('comment-manager-component-wrapper')
 );

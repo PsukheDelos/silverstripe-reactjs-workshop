@@ -1,6 +1,6 @@
 import React from 'react';
 
-class EventComponent extends React.Component {
+class CommentComponent extends React.Component {
 
     constructor(props) {
         super(props);
@@ -8,7 +8,7 @@ class EventComponent extends React.Component {
 
     render() {
         return (
-            <div className='event-component'>
+            <div className='comment-component'>
                 <h2>{this.props.title}</h2>
                 <p>Date: {this.props.date}</p>
                 <p>{this.props.description}</p>
@@ -17,10 +17,10 @@ class EventComponent extends React.Component {
     }
 }
 
-EventComponent.propTypes = {
+CommentComponent.propTypes = {
     title: React.PropTypes.string.isRequired,
     date: React.PropTypes.string.isRequired,
     description: React.PropTypes.string.isRequired
 }
 
-export default EventComponent;
+export default CommentComponent;
