@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import CommentComponent from './comment-component';
+import CommentForm from './comment-form';
 
 class CommentManagerComponent extends React.Component {
 
@@ -18,12 +19,13 @@ class CommentManagerComponent extends React.Component {
 
     render() {
         var comments = this.state.comments.map((comment, i) => {
+
             var props = {
                 name: comment.name,
                 date: comment.date,
                 comment: comment.comment,
                 isSpam: comment.isSpam,
-                isDelete: comment.isDelete,               
+                isDelete: comment.isDelete,
             };
 
             return <CommentComponent key={i} {...props} />
@@ -31,6 +33,7 @@ class CommentManagerComponent extends React.Component {
 
         return (
             <div className='comment-manager-component'>
+            <CommentForm />
                 {comments}
             </div>
         );

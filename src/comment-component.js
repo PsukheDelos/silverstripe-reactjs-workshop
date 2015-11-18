@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class CommentComponent extends React.Component {
 
     constructor(props) {
@@ -9,6 +10,7 @@ class CommentComponent extends React.Component {
     render() {
         return (
             <div className='container'>
+
                 <div className="col-sm-5 comment-component">
                     <div className="panel panel-default">
                       <div className="panel-heading">
@@ -29,6 +31,7 @@ class CommentComponent extends React.Component {
             </div>
               );
     }
+
 }
 
 CommentComponent.propTypes = {
