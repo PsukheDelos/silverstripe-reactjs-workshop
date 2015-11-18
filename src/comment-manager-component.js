@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import CommentComponent from './comment-component';
+import CommentFormComponent from './comment-form-component';
 
 class CommentManagerComponent extends React.Component {
 
@@ -29,6 +30,7 @@ class CommentManagerComponent extends React.Component {
 
         return (
             <div className='comment-manager-component'>
+                <CommentFormComponent />
                 {comments}
             </div>
         );
