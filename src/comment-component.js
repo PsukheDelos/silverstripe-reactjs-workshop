@@ -9,9 +9,8 @@ class CommentComponent extends React.Component {
     render() {
         return (
             <div className='comment-component'>
-                <h2>{this.props.name}</h2>
-                <p>Date: {this.props.date}</p>
-                <p>{this.props.comment}</p>
+              <h2 className="commentAuthor">{this.props.name} - {this.props.date}</h2>
+              {this.props.comment}
             </div>
         );
     }
