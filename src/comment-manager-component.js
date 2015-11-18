@@ -18,10 +18,15 @@ class CommentManagerComponent extends React.Component {
     }
 
     render() {
+      var commentProps = {
+        data: this.state.comments,
+        endpoints: this.props.endpoints
+      };
+
         return (
             <div className='comment-manager-component'>
                 <CommentFormComponent />
-                <CommentListComponent data={this.state.comments}/>
+                <CommentListComponent {...commentProps}/>
             </div>
         );
     }
