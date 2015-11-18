@@ -21,7 +21,9 @@ class CommentManagerComponent extends React.Component {
             var props = {
                 name: comment.name,
                 date: comment.date,
-                comment: comment.comment
+                comment: comment.comment,
+                isSpam: comment.isSpam,
+                isDelete: comment.isDelete,               
             };
 
             return <CommentComponent key={i} {...props} />

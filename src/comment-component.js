@@ -8,12 +8,26 @@ class CommentComponent extends React.Component {
 
     render() {
         return (
-            <div className='comment-component'>
-                <h2>{this.props.name}</h2>
-                <p>Date: {this.props.date}</p>
-                <p>{this.props.comment}</p>
+            <div className='container'>
+                <div className="col-sm-5 comment-component">
+                    <div className="panel panel-default">
+                      <div className="panel-heading">
+                      <strong>{this.props.name}</strong> <span className="text-muted">commented on:{this.props.date} </span>
+                      </div>
+                      <div className="panel-body">
+                      {this.props.comment}
+                      </div>
+                      <div className="col-sm-12">
+                        <a className="btn btn-default pull-left" href="">Spam: {this.props.isSpam}</a>
+                        <a className="btn btn-default pull-left " href="">Delete: {this.props.isDelete}</a>
+
+                      </div>
+                    </div>
+
+                </div>
+
             </div>
-        );
+              );
     }
 }
 
