@@ -14,7 +14,7 @@ class CommentFormComponent extends React.Component {
             <input type="text" />
             <h4>Comments</h4>
             <input type="text" />
-        </div>,
+        </div>
     );
   }
 }
