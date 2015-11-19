@@ -25,7 +25,7 @@ class CommentFormComponent extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log("CommentFormComponent -> handleSubmit()");
-
+    
     //this.setState({text: e.target.value});
     // console.log("Author: " + this.state.author);
     // console.log("Email: " + this.state.password);

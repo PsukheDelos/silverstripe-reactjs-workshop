@@ -12,7 +12,8 @@ class CommentListComponent extends React.Component {
       var commentNodes = this.props.data.map((comment, i) => {
         var props = {
           comment: comment,
-          endpoints: this.props.endpoints
+          endpoints: this.props.endpoints,
+          getCommentById: this.getCommentById
         };
         if(comment.isSpam===0 && comment.isDelete===0){
           return (

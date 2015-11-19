@@ -6,7 +6,8 @@ class CommentComponent extends React.Component {
     constructor(props) {
         super(props);
 
-
+        this.getCommentId = this.getCommentId.bind(this);
+        this.setActionState = this.setActionState.bind(this);
 
     }
 
@@ -17,7 +18,10 @@ class CommentComponent extends React.Component {
         var props = {
           key: i,
           endpoint: endpoint.endpoint,
-          label: endpoint.label
+          label: endpoint.label,
+          getCommentId: this.getCommentId,
+          getCommentById: this.getCommentById,
+          setActionState: this.setActionState
         };
 
         return (
@@ -40,6 +44,14 @@ class CommentComponent extends React.Component {
             {buttons}
           </div>
       );
+    }
+
+    getCommentId() {
+      return this.props.id;
+    }
+
+    setActionState(obj) {
+      this.setState(obj);
     }
 
 

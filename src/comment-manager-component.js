@@ -11,6 +11,8 @@ class CommentManagerComponent extends React.Component {
         this.state = {
             comments: []
         };
+
+        this.getCommentById = this.getCommentById.bind(this);
     }
 
     componentDidMount() {
@@ -20,7 +22,8 @@ class CommentManagerComponent extends React.Component {
     render() {
       var commentProps = {
         data: this.state.comments,
-        endpoints: this.props.endpoints
+        endpoints: this.props.endpoints,
+        getCommentById: this.getCommentById
       };
 
         return (
@@ -35,6 +38,11 @@ class CommentManagerComponent extends React.Component {
         this.setState({
             comments: data.comments
         });
+    }
+
+    getCommentById(id) {
+      console.log("getCommentById");
+      // iterate comments and get the right one and return it.
     }
 }
 

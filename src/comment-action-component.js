@@ -8,6 +8,7 @@ class CommentActionComponent extends React.Component {
     }
 
     render() {
+
         return (
             <div className='comment-action-component'>
               <button className="btn btn-success pull-left action-btn" data-btn-label={this.props.label} type="button" onClick={this.handleClick}>{this.props.label}</button>
@@ -16,7 +17,22 @@ class CommentActionComponent extends React.Component {
     }
 
     handleClick(event) {
-      console.log(this.props.endpoint);
+      var id = this.props.getCommentId();
+      var comment = this.props.getCommentById(id);
+
+      if(this.props.name=='delete'){
+        console.log("delete");
+
+        this.props.setActionState({
+          isDelete: 1
+        });
+      }
+
+
+      console.log('sending ajax request to: ' + this.props.endpoint);
+      setTimeout(() => {
+        alert('Update comment.');
+      }, 2000);
     }
 
 }
