@@ -12,8 +12,7 @@ class CommentListComponent extends React.Component {
       var commentNodes = this.props.data.map((comment, i) => {
         var props = {
           comment: comment,
-          endpoints: this.props.endpoints,
-          getCommentById: this.getCommentById
+          endpoints: this.props.endpoints
         };
           return (
             <CommentComponent key={i} {...props} />

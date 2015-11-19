@@ -25,26 +25,6 @@ class CommentFormComponent extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log("CommentFormComponent -> handleSubmit()");
-    
-    //this.setState({text: e.target.value});
-    // console.log("Author: " + this.state.author);
-    // console.log("Email: " + this.state.password);
-    // console.log("Website: " + this.state.website);
-    // console.log("Text: " + this.state.text);
-    // var content = form.querySelector('[name="content"]').value;
-    // var author = this.refs.author.getDOMNode().value.trim();
-    // var author = this.refs.author.value.trim();
-    // var website = this.refs.website.value.trim();
-    // var text = this.refs.text.value.trim();
-    // if (!text || !author || !email) {
-    //   return;
-    // }
-    // this.props.onCommentSubmit({author: author, text: text});
-    // this.refs.author.value = '';
-    // this.refs.website.value = '';
-    // this.refs.text.value = '';
-
-
   }
 }
 
