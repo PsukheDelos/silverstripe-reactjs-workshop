@@ -11,14 +11,16 @@ class CommentActionComponent extends React.Component {
 
         return (
             <div className='comment-action-component'>
-              <button className="btn btn-success pull-left action-btn" data-btn-label={this.props.label} type="button" onClick={this.handleClick}>{this.props.label}</button>
+              <button className={"btn btn-" + this.props.type + " pull-left action-btn"} data-btn-label={this.props.label} type="button" onClick={this.handleClick}>{this.props.label}</button>
             </div>
         );
     }
 
     handleClick(event) {
+
       console.log("CommentActionComponent -> handleClick()");
       console.log('sending ajax request to: ' + this.props.endpoint);
+
       setTimeout(() => {
         alert('Update comment.');
         this.props.setModerated();

@@ -9,16 +9,19 @@ var props = {
       {
         label: 'Approve',
         name: 'approve',
+        type: 'success',
         endpoint: wrapper.getAttribute('data-endpoint-approve')
       },
       {
         label: 'Spam',
         name: 'spam',
+        type: 'warning',
         endpoint: wrapper.getAttribute('data-endpoint-spam')
       },
       {
         label: 'Delete',
         name: 'delete',
+        type: 'danger',
         endpoint: wrapper.getAttribute('data-endpoint-delete')
       }
     ]

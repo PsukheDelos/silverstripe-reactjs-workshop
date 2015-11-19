@@ -16,6 +16,8 @@ class CommentComponent extends React.Component {
           key: i,
           endpoint: endpoint.endpoint,
           label: endpoint.label,
+          name: endpoint.name,
+          type: endpoint.type,
           setModerated: this.setModerated
         };
         if(!this.props.comment.isModerated){
