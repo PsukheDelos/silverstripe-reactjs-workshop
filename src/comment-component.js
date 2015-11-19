@@ -26,12 +26,19 @@ class CommentComponent extends React.Component {
       });
 
       return (
-        <div>
-          <div className='comment-component'>
-            <h2 className="commentAuthor">{this.props.comment.comment}</h2>
+          <div className='comment-component col-sm-12'>
+            <div className="panel panel-default">
+                <div className="panel-heading">
+                <strong>{this.props.comment.name}</strong> <span className="text-muted">{this.props.comment.date}</span>
+                </div>
+
+                <div className="panel-body">
+                {this.props.comment.comment}
+                </div>
+
+            </div>
+            {buttons}
           </div>
-          {buttons}
-        </div>
       );
     }
 

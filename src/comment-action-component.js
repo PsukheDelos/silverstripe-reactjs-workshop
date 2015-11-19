@@ -10,7 +10,7 @@ class CommentActionComponent extends React.Component {
     render() {
         return (
             <div className='comment-action-component'>
-              <button type="button" onClick={this.handleClick}>{this.props.label}</button>
+              <button className="btn btn-success pull-left action-btn" data-btn-label={this.props.label} type="button" onClick={this.handleClick}>{this.props.label}</button>
             </div>
         );
     }
