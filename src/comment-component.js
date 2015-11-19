@@ -5,9 +5,6 @@ class CommentComponent extends React.Component {
 
     constructor(props) {
         super(props);
-
-        this.getCommentId = this.getCommentId.bind(this);
-        this.setActionState = this.setActionState.bind(this);
         this.setModerated = this.setModerated.bind(this);
     }
 
@@ -19,9 +16,6 @@ class CommentComponent extends React.Component {
           key: i,
           endpoint: endpoint.endpoint,
           label: endpoint.label,
-          getCommentId: this.getCommentId,
-          getCommentById: this.getCommentById,
-          setActionState: this.setActionState,
           setModerated: this.setModerated
         };
         if(!this.props.comment.isModerated){
@@ -50,24 +44,12 @@ class CommentComponent extends React.Component {
 
     setModerated(){
       console.log("setModerated()");
-      console.log(this.props);
+      var comment = this.props.comment;
+      comment.isModerated = true;
+      this.setState({
+        comment: comment
+      });
     }
-
-    getCommentId() {
-      return this.props.id;
-    }
-
-    setActionState(obj) {
-      this.setState(obj);
-    }
-
-
 }
-
-// CommentComponent.propTypes = {
-//     name: React.PropTypes.string.isRequired,
-//     date: React.PropTypes.string.isRequired,
-//     comment: React.PropTypes.string.isRequired
-// }
 
 export default CommentComponent;
