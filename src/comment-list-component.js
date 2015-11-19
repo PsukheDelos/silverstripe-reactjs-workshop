@@ -15,11 +15,9 @@ class CommentListComponent extends React.Component {
           endpoints: this.props.endpoints,
           getCommentById: this.getCommentById
         };
-        if(comment.isSpam===0 && comment.isDelete===0){
           return (
             <CommentComponent key={i} {...props} />
           );
-        }
       });
 
       return (
