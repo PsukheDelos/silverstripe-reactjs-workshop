@@ -17,21 +17,11 @@ class CommentActionComponent extends React.Component {
     }
 
     handleClick(event) {
-      var id = this.props.getCommentId();
-      var comment = this.props.getCommentById(id);
-
-      if(this.props.name=='delete'){
-        console.log("delete");
-
-        this.props.setActionState({
-          isDelete: 1
-        });
-      }
-
-
+      console.log("CommentActionComponent -> handleClick()");
       console.log('sending ajax request to: ' + this.props.endpoint);
       setTimeout(() => {
         alert('Update comment.');
+        this.props.setModerated();
       }, 2000);
     }
 

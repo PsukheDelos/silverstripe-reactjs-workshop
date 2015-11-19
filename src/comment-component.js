@@ -8,7 +8,7 @@ class CommentComponent extends React.Component {
 
         this.getCommentId = this.getCommentId.bind(this);
         this.setActionState = this.setActionState.bind(this);
-
+        this.setModerated = this.setModerated.bind(this);
     }
 
     render() {
@@ -21,12 +21,14 @@ class CommentComponent extends React.Component {
           label: endpoint.label,
           getCommentId: this.getCommentId,
           getCommentById: this.getCommentById,
-          setActionState: this.setActionState
+          setActionState: this.setActionState,
+          setModerated: this.setModerated
         };
-
-        return (
-          <CommentActionComponent {...props} />
-        );
+        if(!this.props.comment.isModerated){
+          return (
+            <CommentActionComponent {...props} />
+          );
+        }
       });
 
       return (
@@ -44,6 +46,11 @@ class CommentComponent extends React.Component {
             {buttons}
           </div>
       );
+    }
+
+    setModerated(){
+      console.log("setModerated()");
+      console.log(this.props);
     }
 
     getCommentId() {
