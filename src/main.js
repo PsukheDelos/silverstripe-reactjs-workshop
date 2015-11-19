@@ -5,10 +5,16 @@ var wrapper = document.getElementById('comment-manager-component-wrapper');
 
 var props = {
     source: 'data/comments.json',
-    endpoints: {
-      approve: wrapper.getAttribute('data-endpoint-approve'),
-      spam: wrapper.getAttribute('data-endpoint-spam')
-    }
+    endpoints: [
+      {
+        label: 'Approve',
+        endpoint: wrapper.getAttribute('data-endpoint-approve')
+      },
+      {
+        label: 'Spam',
+        endpoint: wrapper.getAttribute('data-endpoint-spam')
+      }
+    ]
 };
 
 React.render(

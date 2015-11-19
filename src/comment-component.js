@@ -1,22 +1,29 @@
 import React from 'react';
-// import ActionComponent from './action-component';
+import CommentActionComponent from './comment-action-component';
 
 class CommentComponent extends React.Component {
 
     constructor(props) {
         super(props);
 
-        // Move this to ActionComponent
-        this.handleClick = this.handleClick.bind(this);
+
+
     }
 
     render() {
-      var buttons = [];
 
-      for (let key in this.props.endpoints) {
-        // buttons.puch(<ActionComponent />);
-        buttons.push(<button key={key} ref={key} type="button" data-endpoint={this.props.endpoints[key]} onClick={this.handleClick}>{key}</button>);
-      }
+
+      var buttons = this.props.endpoints.map((endpoint, i) => {
+        var props = {
+          key: i,
+          endpoint: endpoint.endpoint,
+          label: endpoint.label
+        };
+
+        return (
+          <CommentActionComponent {...props} />
+        );
+      });
 
       return (
         <div>
@@ -28,10 +35,7 @@ class CommentComponent extends React.Component {
       );
     }
 
-    // Move this to ActionComponent
-    handleClick(event) {
-      console.log(event.target);
-    }
+
 }
 
 // CommentComponent.propTypes = {
