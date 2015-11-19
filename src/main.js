@@ -13,6 +13,10 @@ var props = {
       {
         label: 'Spam',
         endpoint: wrapper.getAttribute('data-endpoint-spam')
+      },
+      {
+        label: 'Delete',
+        endpoint: wrapper.getAttribute('data-endpoint-delete')
       }
     ]
 };
