@@ -1,7 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
-import CommentComponent from './comment-component';
 import CommentFormComponent from './comment-form-component';
+import CommentListComponent from './comment-list-component';
 
 class CommentManagerComponent extends React.Component {
 
@@ -11,6 +11,7 @@ class CommentManagerComponent extends React.Component {
         this.state = {
             comments: []
         };
+
     }
 
     componentDidMount() {
@@ -18,20 +19,15 @@ class CommentManagerComponent extends React.Component {
     }
 
     render() {
-        var comments = this.state.comments.map((comment, i) => {
-            var props = {
-                name: comment.name,
-                date: comment.date,
-                comment: comment.comment
-            };
-
-            return <CommentComponent key={i} {...props} />
-        });
+      var commentProps = {
+        data: this.state.comments,
+        endpoints: this.props.endpoints
+      };
 
         return (
             <div className='comment-manager-component'>
                 <CommentFormComponent />
-                {comments}
+                <CommentListComponent {...commentProps}/>
             </div>
         );
     }
